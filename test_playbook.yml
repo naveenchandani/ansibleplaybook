@@ -1,13 +1,13 @@
   - name: Playbook
-    hosts: all
+    hosts: localhost
     become: yes
     become_user: root
     tasks:
       - name: ensure apache is at the latest version
         yum:
-          name: nginx
+          name: httpd
           state: latest
       - name: ensure apache is running
         service:
-          name: nginx
+          name: httpd
           state: started
